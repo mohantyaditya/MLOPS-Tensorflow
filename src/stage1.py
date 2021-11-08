@@ -68,7 +68,7 @@ if __name__ == '__main__':
 
     parsed_args = args.parse_args()
 
-    print("hi")
+    #print("hi")
 
     try:
 
