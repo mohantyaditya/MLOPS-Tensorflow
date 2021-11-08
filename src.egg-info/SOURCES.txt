@@ -2,6 +2,7 @@ README.md
 setup.py
 src/__init__.py
 src/stage1.py
+src/stage2.py
 src.egg-info/PKG-INFO
 src.egg-info/SOURCES.txt
 src.egg-info/dependency_links.txt

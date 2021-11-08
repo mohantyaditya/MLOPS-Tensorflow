@@ -2,6 +2,7 @@ from genericpath import exists
 import os
 
 from src.utils.all_utils import read_yaml, create_directory
+from src.utils.models import get_VGG_16_model,prepare_model
 
 import argparse
 
@@ -11,6 +12,7 @@ from tqdm import tqdm
 import shutil
 
 import logging
+import io 
 
 
 
@@ -29,7 +31,7 @@ def prepare_base_model(config_path,params_path):
 
     artifacts = config["artifacts"]
 
-    artifacts_dir = artifacts["artifacts_dir"]
+    artifacts_dir = artifacts["ARTIFACTS_DIR"]
 
 
     base_model_dir = artifacts["BASE_MODEL_DIR"]
@@ -42,29 +44,38 @@ def prepare_base_model(config_path,params_path):
 
     base_model_path = os.path.join(base_model_dir_path,base_model_name)
 
-    model = get__VGG_16_model(input_shape = params["IMAGE_SIZE"],model_path = base_model_path)
+    model = get_VGG_16_model(input_shape = params["IMAGE_SIZE"],model_path = base_model_path)
+
+    model = prepare_model(
+        model,
+        CLASSES=params["CLASSES"],
+        freeze_all = True,
+        freeze_till=None,
+        learning_rate = params["LEARNING_RATE"]
+
+    )
+    updated_base_model_path = os.path.join(
+        base_model_dir_path,
+        artifacts["UPDATED_BASE_MODEL_NAME"]
+    )
+    logging.info(f"{model.summary()}")
 
 
 
 
 
+    def _log_model_summary(model):
+
+        with io.StringIO() as stream:
+            model.summary(print_fn = lambda x:stream.write(f"{x}\n"))
+            summary_str = stream.getvalue()
+
+        return summary_str
 
 
+    logging.info(f"full model summary: {_log_model_summary(model)}")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    model.save(updated_base_model_path)
 
 
 

@@ -28,3 +28,137 @@
 [2021-11-08 01:28:02,784: INFO: all_utils]: Directory is created at data/dog 
 [2021-11-08 01:28:02,874: INFO: all_utils]: Directory is created at data/cat 
 [2021-11-08 01:28:02,949: INFO: stage1]: stage 1 completed and all data are saved in local >>>>> 
+[2021-11-08 03:12:22,488: INFO: stage2]: >>>>> stage two started  
+[2021-11-08 03:12:22,489: INFO: all_utils]: yaml file: config/config.yaml loaded successfully 
+[2021-11-08 03:12:22,490: INFO: all_utils]: yaml file: params.yaml loaded successfully 
+[2021-11-08 03:12:22,490: ERROR: stage2]: 'artifacts_dir' 
+Traceback (most recent call last):
+  File "src/stage2.py", line 94, in <module>
+    prepare_base_model(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage2.py", line 33, in prepare_base_model
+    artifacts_dir = artifacts["artifacts_dir"]
+KeyError: 'artifacts_dir'
+[2021-11-08 03:13:23,020: INFO: stage2]: >>>>> stage two started  
+[2021-11-08 03:13:23,022: INFO: all_utils]: yaml file: config/config.yaml loaded successfully 
+[2021-11-08 03:13:23,022: INFO: all_utils]: yaml file: params.yaml loaded successfully 
+[2021-11-08 03:13:23,023: INFO: all_utils]: Directory is created at base_model 
+[2021-11-08 03:13:23,023: ERROR: stage2]: name 'get__VGG_16_model' is not defined 
+Traceback (most recent call last):
+  File "src/stage2.py", line 94, in <module>
+    prepare_base_model(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage2.py", line 46, in prepare_base_model
+    model = get__VGG_16_model(input_shape = params["IMAGE_SIZE"],model_path = base_model_path)
+NameError: name 'get__VGG_16_model' is not defined
+[2021-11-08 03:16:51,356: INFO: stage2]: >>>>> stage two started  
+[2021-11-08 03:16:51,357: INFO: all_utils]: yaml file: config/config.yaml loaded successfully 
+[2021-11-08 03:16:51,358: INFO: all_utils]: yaml file: params.yaml loaded successfully 
+[2021-11-08 03:16:51,358: INFO: all_utils]: Directory is created at base_model 
+[2021-11-08 03:16:51,358: ERROR: stage2]: name 'get__VGG_16_model' is not defined 
+Traceback (most recent call last):
+  File "src/stage2.py", line 95, in <module>
+    prepare_base_model(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage2.py", line 47, in prepare_base_model
+    model = get__VGG_16_model(input_shape = params["IMAGE_SIZE"],model_path = base_model_path)
+NameError: name 'get__VGG_16_model' is not defined
+[2021-11-08 03:17:50,843: INFO: stage2]: >>>>> stage two started  
+[2021-11-08 03:17:50,858: INFO: all_utils]: yaml file: config/config.yaml loaded successfully 
+[2021-11-08 03:17:50,859: INFO: all_utils]: yaml file: params.yaml loaded successfully 
+[2021-11-08 03:17:50,860: INFO: all_utils]: Directory is created at base_model 
+[2021-11-08 03:17:56,311: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
+[2021-11-08 03:17:56,499: INFO: models]: VGG16 base model is saved at artifacts/base_model/VGG16_base_model.h5 
+[2021-11-08 03:17:56,499: ERROR: stage2]: prepare_base_model() got an unexpected keyword argument 'CLASSES' 
+Traceback (most recent call last):
+  File "src/stage2.py", line 95, in <module>
+    prepare_base_model(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage2.py", line 54, in prepare_base_model
+    learning_rate = params["LEARNING_RATE"]
+TypeError: prepare_base_model() got an unexpected keyword argument 'CLASSES'
+[2021-11-08 03:21:24,625: INFO: stage2]: >>>>> stage two started  
+[2021-11-08 03:21:24,627: INFO: all_utils]: yaml file: config/config.yaml loaded successfully 
+[2021-11-08 03:21:24,628: INFO: all_utils]: yaml file: params.yaml loaded successfully 
+[2021-11-08 03:21:24,628: INFO: all_utils]: Directory is created at base_model 
+[2021-11-08 03:21:25,692: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
+[2021-11-08 03:21:25,932: INFO: models]: VGG16 base model is saved at artifacts/base_model/VGG16_base_model.h5 
+[2021-11-08 03:21:25,932: ERROR: stage2]: prepare_model() got an unexpected keyword argument 'learning_rate' 
+Traceback (most recent call last):
+  File "src/stage2.py", line 95, in <module>
+    prepare_base_model(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage2.py", line 54, in prepare_base_model
+    learning_rate = params["LEARNING_RATE"]
+TypeError: prepare_model() got an unexpected keyword argument 'learning_rate'
+[2021-11-08 03:22:06,272: INFO: stage2]: >>>>> stage two started  
+[2021-11-08 03:22:06,274: INFO: all_utils]: yaml file: config/config.yaml loaded successfully 
+[2021-11-08 03:22:06,275: INFO: all_utils]: yaml file: params.yaml loaded successfully 
+[2021-11-08 03:22:06,275: INFO: all_utils]: Directory is created at base_model 
+[2021-11-08 03:22:06,908: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
+[2021-11-08 03:22:07,093: INFO: models]: VGG16 base model is saved at artifacts/base_model/VGG16_base_model.h5 
+[2021-11-08 03:22:07,107: ERROR: stage2]: Unexpected keyword argument passed to optimizer: loss 
+Traceback (most recent call last):
+  File "src/stage2.py", line 95, in <module>
+    prepare_base_model(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage2.py", line 54, in prepare_base_model
+    learning_rate = params["LEARNING_RATE"]
+  File "/home/asdf/newops/src/utils/models.py", line 46, in prepare_model
+    metrics = ["accuracy"])
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras/optimizer_v2/gradient_descent.py", line 102, in __init__
+    super(SGD, self).__init__(name, **kwargs)
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras/optimizer_v2/optimizer_v2.py", line 350, in __init__
+    "passed to optimizer: " + str(k))
+TypeError: Unexpected keyword argument passed to optimizer: loss
+[2021-11-08 03:26:52,627: INFO: stage2]: >>>>> stage two started  
+[2021-11-08 03:26:52,629: INFO: all_utils]: yaml file: config/config.yaml loaded successfully 
+[2021-11-08 03:26:52,630: INFO: all_utils]: yaml file: params.yaml loaded successfully 
+[2021-11-08 03:26:52,630: INFO: all_utils]: Directory is created at base_model 
+[2021-11-08 03:26:53,144: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
+[2021-11-08 03:26:53,296: INFO: models]: VGG16 base model is saved at artifacts/base_model/VGG16_base_model.h5 
+[2021-11-08 03:26:53,342: INFO: models]: custom model is compiled and ready to be trained 
+[2021-11-08 03:26:53,345: INFO: stage2]: None 
+[2021-11-08 03:26:53,347: INFO: stage2]: full model summary: Model: "vgg16"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+=================================================================
+Total params: 14,714,688
+Trainable params: 0
+Non-trainable params: 14,714,688
+_________________________________________________________________
+ 
+[2021-11-08 03:26:53,347: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
+[2021-11-08 03:26:53,475: INFO: stage2]: stage two completed and base model is created >>>>> 
