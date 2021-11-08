@@ -1,3 +1,4 @@
+from genericpath import exists
 import os
 
 from src.utils.all_utils import read_yaml, create_directory
@@ -11,9 +12,9 @@ import shutil
 
 import logging
 
-logging_str = "[%(asctime)s: %(levelname)s: %(module)s]: " 
+logging_str = "[%(asctime)s: %(levelname)s: %(module)s]: %(message)s " 
 log_dir = "logs"
-create_directory([log_dir])
+os.makedirs(log_dir,exist_ok = True)
 logging.basicConfig(filename=os.path.join(log_dir,"running_logs.log"),level = logging.INFO,format = logging_str,filemode = 'a')
 
 
@@ -71,11 +72,12 @@ if __name__ == '__main__':
 
     try:
 
-        logging.info("stage 1 started ")
+        logging.info(">>>>> stage 1 started ")
 
         get_data(config_path=parsed_args.config)
+        print("*"*50)
 
-        logging.info("stage 1 completed and all data are saved in local")
+        logging.info("stage 1 completed and all data are saved in local >>>>>")
 
     except Exception as e:
         logging.exception(e)

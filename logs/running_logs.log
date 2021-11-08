@@ -1,0 +1,30 @@
+[2021-11-08 01:17:24,711: INFO: stage1]: 
+[2021-11-08 01:17:24,713: INFO: all_utils]: 
+[2021-11-08 01:17:24,718: INFO: all_utils]: 
+[2021-11-08 01:17:24,829: INFO: all_utils]: 
+[2021-11-08 01:17:24,891: INFO: stage1]: 
+[2021-11-08 01:18:31,823: INFO: stage1]: 
+[2021-11-08 01:18:31,824: INFO: all_utils]: 
+[2021-11-08 01:18:31,832: INFO: all_utils]: 
+[2021-11-08 01:18:31,980: INFO: all_utils]: 
+[2021-11-08 01:18:32,197: INFO: stage1]: 
+[2021-11-08 01:19:32,006: INFO: stage1]: 
+[2021-11-08 01:19:32,008: INFO: all_utils]: 
+[2021-11-08 01:19:32,013: INFO: all_utils]: 
+[2021-11-08 01:19:32,147: INFO: all_utils]: 
+[2021-11-08 01:19:32,292: INFO: stage1]: 
+[2021-11-08 01:20:08,926: INFO: stage1]: 
+[2021-11-08 01:20:08,927: INFO: all_utils]: 
+[2021-11-08 01:20:08,933: INFO: all_utils]: 
+[2021-11-08 01:20:09,086: INFO: all_utils]: 
+[2021-11-08 01:20:09,222: INFO: stage1]: 
+[2021-11-08 01:27:42,697: INFO: stage1]: >>>>> stage 1 started  
+[2021-11-08 01:27:42,698: INFO: all_utils]: yaml file: {path_to_yaml} loaded successfully 
+[2021-11-08 01:27:42,704: INFO: all_utils]: Directory is created at data/dog 
+[2021-11-08 01:27:42,966: INFO: all_utils]: Directory is created at data/cat 
+[2021-11-08 01:27:43,044: INFO: stage1]: stage 1 completed and all data are saved in local >>>>> 
+[2021-11-08 01:28:02,776: INFO: stage1]: >>>>> stage 1 started  
+[2021-11-08 01:28:02,778: INFO: all_utils]: yaml file: config/config.yaml loaded successfully 
+[2021-11-08 01:28:02,784: INFO: all_utils]: Directory is created at data/dog 
+[2021-11-08 01:28:02,874: INFO: all_utils]: Directory is created at data/cat 
+[2021-11-08 01:28:02,949: INFO: stage1]: stage 1 completed and all data are saved in local >>>>> 
