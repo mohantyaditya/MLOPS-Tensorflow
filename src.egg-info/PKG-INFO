@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: src
+Version: 0.0.1
+Summary: A small package for dvc ml pipeline demo
+Home-page: https://github.com/mohantyaditya/MLOPS-Tensorflow
+Author: Aditya Mohanty
+Author-email: adityamohanty1994@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+## DVC -DL MLOPS PRACTICE
+
+
+Initializ dvc 
+
+
+
