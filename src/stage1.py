@@ -14,7 +14,7 @@ import logging
 logging_str = "[%(asctime)s: %(levelname)s: %(module)s]: " 
 log_dir = "logs"
 create_directory([log_dir])
-logging.basicConfig(filename=os.path.join(log_dir,"running_logs.log"),level = logging.INFO),format = logging_str,filemode = 'a')
+logging.basicConfig(filename=os.path.join(log_dir,"running_logs.log"),level = logging.INFO,format = logging_str,filemode = 'a')
 
 
 def copy_file(source_download_dir,local_data_dir):
