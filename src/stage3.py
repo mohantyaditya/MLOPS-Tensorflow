@@ -5,6 +5,7 @@ from src.utils.all_utils import read_yaml, create_directory
 from src.utils.callbacks import create_and_save_tensorboard_callback, create_and_save_checkpoint_callback
 import argparse
 import os
+import time
 import logging
 
 logging_str = "[%(asctime)s: %(levelname)s: %(module)s]: %(message)s"
@@ -60,7 +61,7 @@ if __name__ == '__main__':
 
         logging.info(">>>>> stage three started ")
 
-        prepare_base_model(config_path= parsed_args.config,params_path =parsed_args.params) 
+        prepare_callbacks(config_path= parsed_args.config,params_path =parsed_args.params) 
         
 
         #get_data(config_path=parsed_args.config)

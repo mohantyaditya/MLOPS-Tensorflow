@@ -162,3 +162,138 @@ _________________________________________________________________
  
 [2021-11-08 03:26:53,347: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
 [2021-11-08 03:26:53,475: INFO: stage2]: stage two completed and base model is created >>>>> 
+[2021-11-08 06:18:26,201: INFO: stage2]: >>>>> stage two started  
+[2021-11-08 06:18:26,203: INFO: all_utils]: yaml file: config/config.yaml loaded successfully 
+[2021-11-08 06:18:26,204: INFO: all_utils]: yaml file: params.yaml loaded successfully 
+[2021-11-08 06:18:26,204: INFO: all_utils]: Directory is created at base_model 
+[2021-11-08 06:18:26,780: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
+[2021-11-08 06:18:26,973: INFO: models]: VGG16 base model is saved at artifacts/base_model/VGG16_base_model.h5 
+[2021-11-08 06:18:27,003: INFO: models]: custom model is compiled and ready to be trained 
+[2021-11-08 06:18:27,005: INFO: stage2]: None 
+[2021-11-08 06:18:27,006: INFO: stage2]: full model summary: Model: "vgg16"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+=================================================================
+Total params: 14,714,688
+Trainable params: 0
+Non-trainable params: 14,714,688
+_________________________________________________________________
+ 
+[2021-11-08 06:18:27,006: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
+[2021-11-08 06:18:27,201: INFO: stage2]: stage two completed and base model is created >>>>> 
+[2021-11-08 20:56:57,107: INFO: stage3]: >>>>> stage three started 
+[2021-11-08 20:56:57,107: ERROR: stage3]: name 'prepare_base_model' is not defined
+Traceback (most recent call last):
+  File "src/stage3.py", line 63, in <module>
+    prepare_base_model(config_path= parsed_args.config,params_path =parsed_args.params)
+NameError: name 'prepare_base_model' is not defined
+[2021-11-08 20:57:51,918: INFO: stage3]: >>>>> stage three started 
+[2021-11-08 20:57:51,920: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-08 20:57:51,921: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-08 20:57:51,921: INFO: all_utils]: Directory is created at artifacts/tensorboard_log_dir
+[2021-11-08 20:57:51,921: INFO: all_utils]: Directory is created at artifacts/checkpoints
+[2021-11-08 20:57:51,921: INFO: all_utils]: Directory is created at artifacts/callbacks
+[2021-11-08 20:57:51,921: ERROR: stage3]: module 'time' has no attribute 'ascitime'
+Traceback (most recent call last):
+  File "src/stage3.py", line 63, in <module>
+    prepare_callbacks(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage3.py", line 39, in prepare_callbacks
+    create_and_save_tensorboard_callback(callbacks_dir,tensorboard_log_dir)
+  File "/home/asdf/newops/src/utils/callbacks.py", line 14, in create_and_save_tensorboard_callback
+    unique_name = get_timestamp("tb-logs")
+  File "/home/asdf/newops/src/utils/all_utils.py", line 26, in get_timestamp
+    timestamp = time.ascitime().replace(" ","_").replace(":","_")
+AttributeError: module 'time' has no attribute 'ascitime'
+[2021-11-08 20:59:29,348: INFO: stage3]: >>>>> stage three started 
+[2021-11-08 20:59:29,349: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-08 20:59:29,351: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-08 20:59:29,351: INFO: all_utils]: Directory is created at artifacts/tensorboard_log_dir
+[2021-11-08 20:59:29,351: INFO: all_utils]: Directory is created at artifacts/checkpoints
+[2021-11-08 20:59:29,351: INFO: all_utils]: Directory is created at artifacts/callbacks
+[2021-11-08 20:59:29,585: ERROR: stage3]: module 'keras.api._v2.keras.callbacks' has no attribute 'Tensorboard'
+Traceback (most recent call last):
+  File "src/stage3.py", line 64, in <module>
+    prepare_callbacks(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage3.py", line 40, in prepare_callbacks
+    create_and_save_tensorboard_callback(callbacks_dir,tensorboard_log_dir)
+  File "/home/asdf/newops/src/utils/callbacks.py", line 18, in create_and_save_tensorboard_callback
+    tensorboard_callback = tf.keras.callbacks.Tensorboard(log_dir = tb_running_log_dir)
+AttributeError: module 'keras.api._v2.keras.callbacks' has no attribute 'Tensorboard'
+[2021-11-08 21:03:33,995: INFO: stage3]: >>>>> stage three started 
+[2021-11-08 21:03:33,997: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-08 21:03:33,998: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-08 21:03:33,998: INFO: all_utils]: Directory is created at artifacts/tensorboard_log_dir
+[2021-11-08 21:03:33,998: INFO: all_utils]: Directory is created at artifacts/checkpoints
+[2021-11-08 21:03:33,998: INFO: all_utils]: Directory is created at artifacts/callbacks
+[2021-11-08 21:03:34,205: ERROR: stage3]: name 'joblib' is not defined
+Traceback (most recent call last):
+  File "src/stage3.py", line 64, in <module>
+    prepare_callbacks(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage3.py", line 40, in prepare_callbacks
+    create_and_save_tensorboard_callback(callbacks_dir,tensorboard_log_dir)
+  File "/home/asdf/newops/src/utils/callbacks.py", line 22, in create_and_save_tensorboard_callback
+    joblib.dump(tensorboard_callback,tb_callback_filepath)
+NameError: name 'joblib' is not defined
+[2021-11-08 21:04:27,211: INFO: stage3]: >>>>> stage three started 
+[2021-11-08 21:04:27,213: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-08 21:04:27,214: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-08 21:04:27,214: INFO: all_utils]: Directory is created at artifacts/tensorboard_log_dir
+[2021-11-08 21:04:27,214: INFO: all_utils]: Directory is created at artifacts/checkpoints
+[2021-11-08 21:04:27,214: INFO: all_utils]: Directory is created at artifacts/callbacks
+[2021-11-08 21:04:27,414: INFO: callbacks]: tensorboard callback is stored at artifacts/callbacks/tensorboard_cb.cb
+[2021-11-08 21:04:27,414: ERROR: stage3]: name 'tensorboard_callback' is not defined
+Traceback (most recent call last):
+  File "src/stage3.py", line 64, in <module>
+    prepare_callbacks(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage3.py", line 41, in prepare_callbacks
+    create_and_save_checkpoint_callback(callbacks_dir,checkpoint_dir)
+  File "/home/asdf/newops/src/utils/callbacks.py", line 39, in create_and_save_checkpoint_callback
+    joblib.dump(tensorboard_callback,tb_callback_filepath)
+NameError: name 'tensorboard_callback' is not defined
+[2021-11-08 21:11:49,860: INFO: stage3]: >>>>> stage three started 
+[2021-11-08 21:11:49,862: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-08 21:11:49,862: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-08 21:11:49,863: INFO: all_utils]: Directory is created at artifacts/tensorboard_log_dir
+[2021-11-08 21:11:49,863: INFO: all_utils]: Directory is created at artifacts/checkpoints
+[2021-11-08 21:11:49,863: INFO: all_utils]: Directory is created at artifacts/callbacks
+[2021-11-08 21:11:50,122: INFO: callbacks]: tensorboard callback is stored at artifacts/callbacks/tensorboard_cb.cb
+[2021-11-08 21:11:50,127: INFO: callbacks]: Tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
+[2021-11-08 21:11:50,128: INFO: stage3]: stage three completed and call backs are prepared and saved as binary >>>>>
