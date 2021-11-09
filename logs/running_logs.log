@@ -297,3 +297,10 @@ NameError: name 'tensorboard_callback' is not defined
 [2021-11-08 21:11:50,122: INFO: callbacks]: tensorboard callback is stored at artifacts/callbacks/tensorboard_cb.cb
 [2021-11-08 21:11:50,127: INFO: callbacks]: Tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
 [2021-11-08 21:11:50,128: INFO: stage3]: stage three completed and call backs are prepared and saved as binary >>>>>
+[2021-11-08 22:14:39,102: INFO: stage4]: >>>>> stage four started 
+[2021-11-08 22:14:39,104: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-08 22:14:39,104: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-08 22:14:39,104: INFO: all_utils]: Directory is created at artifacts/model
+[2021-11-08 22:14:41,466: WARNING: hdf5_format]: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-11-08 22:14:41,467: INFO: models]: Untrained model is read from artifacts/base_model/updated_VGG16_base_model.h5
+[2021-11-08 22:14:41,469: INFO: stage4]: stage four completed and model is saved >>>>>

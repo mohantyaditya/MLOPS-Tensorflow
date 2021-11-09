@@ -3,6 +3,9 @@ import os
 import logging
 
 
+
+
+
 def get_VGG_16_model(input_shape,model_path):
 
     model = tf.keras.applications.vgg16.VGG16(
@@ -48,3 +51,14 @@ def prepare_model(model,CLASSES,freeze_all,freeze_till,learning_rate):
     logging.info(f"custom model is compiled and ready to be trained")
 
     return model 
+
+
+
+def load_full_model(untrained_full_model_path):
+    model = tf.keras.models.load_model(untrained_full_model_path)
+
+    logging.info(f"Untrained model is read from {untrained_full_model_path}")
+
+    return model 
+
+    

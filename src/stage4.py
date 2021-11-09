@@ -1,7 +1,8 @@
 
 
 from src.utils.all_utils import read_yaml, create_directory
-from src.utils.callbacks import create_and_save_tensorboard_callback, create_and_save_checkpoint_callback
+from src.utils.models import load_full_model
+from src.utils.callbacks import create_and_save_tensorboard_callback, create_and_save_checkpoint_callback, get_callbacks
 import argparse
 import os
 import time
@@ -22,21 +23,23 @@ def train_model(config_path,params_path):
     params = read_yaml(params_path)
 
     artifacts = config["artifacts"]
-
+ 
     artifacts_dir = artifacts["ARTIFACTS_DIR"]
 
+    train_model_dir_path = os.path.join(artifacts_dir,artifacts["TRAINED_MODEL_DIR"])
+
+    create_directory([train_model_dir_path])
 
 
+    untrain_full_model_path = os.path.join(artifacts_dir,artifacts
+    ["BASE_MODEL_DIR"],artifacts["UPDATED_BASE_MODEL_NAME"])
 
+    
+    model = load_full_model(untrain_full_model_path)
 
+    callback_dir_path = os.path.join(artifacts_dir,artifacts["CALLBACKS_DIR"])
 
-
-
-
-
-
-
-
+    callbacks = get_callbacks(callback_dir_path)
 
 
 
