@@ -1,6 +1,11 @@
+from enum import unique
 import tensorflow as tf
 import os
 import logging
+
+from tensorflow.python.ops.gen_logging_ops import timestamp
+
+from utils.all_utils import get_timestamp
 
 
 
@@ -28,7 +33,7 @@ def prepare_model(model,CLASSES,freeze_all,freeze_till,learning_rate):
             layer.trainable = False
 
     elif (freeze_till is not None) and (freeze_till > 0):
-        for layer in model.layers[:freeze_till]:
+        for layer in model.layers[:-freeze_till]:
             layer.trainable = False
 
     ## add our  fully connected layers
@@ -50,7 +55,7 @@ def prepare_model(model,CLASSES,freeze_all,freeze_till,learning_rate):
     
     logging.info(f"custom model is compiled and ready to be trained")
 
-    return model 
+    return full_model 
 
 
 
@@ -61,4 +66,10 @@ def load_full_model(untrained_full_model_path):
 
     return model 
 
-    
+
+def get_unique_path_to_save_model(trained_model_dir,model_name = "model"):
+    timestamp = get_timestamp(model_name)
+    unique_model_name = f"{timestamp}_.h5"
+    unique_model_path = os.path.join(trained_model_dir,unique_model_name)
+    return unique_model_path
+

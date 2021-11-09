@@ -10,6 +10,8 @@ import os
 import time
 import logging
 
+from utils.models import get_unique_path_to_save_model
+
 logging_str = "[%(asctime)s: %(levelname)s: %(module)s]: %(message)s"
 log_dir = "logs"
 os.makedirs(log_dir, exist_ok=True)
@@ -51,6 +53,26 @@ def train_model(config_path,params_path):
         do_data_augmentation = params["AUGMENTATION"]
     )
 
+    steps_per_epoch = train_generator.samples // train_generator.batch_size
+    validation_steps = valid_generator.samples // valid_generator.batch_size
+
+    model.fit(
+        train_generator,
+        validation_data = valid_generator,
+        epochs = params["EPOCHS"],
+        steps_per_epoch = steps_per_epoch,
+        validation_steps = validation_steps,
+        callbacks = callbacks
+
+    )
+    logging.info(f"training completed")
+
+    train_model_dir = os.path.join(artifacts_dir,artifacts["TRAINED_MODEL_DIR"])
+    create_directory([train_model_dir])
+
+    model_file_path = get_unique_path_to_save_model(train_model_dir)
+    model.save(model_file_path)
+    logging.info(f"trained model is saved at :{model_file_path}")
 
 
 

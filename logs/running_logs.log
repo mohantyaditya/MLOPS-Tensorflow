@@ -304,3 +304,299 @@ NameError: name 'tensorboard_callback' is not defined
 [2021-11-08 22:14:41,466: WARNING: hdf5_format]: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
 [2021-11-08 22:14:41,467: INFO: models]: Untrained model is read from artifacts/base_model/updated_VGG16_base_model.h5
 [2021-11-08 22:14:41,469: INFO: stage4]: stage four completed and model is saved >>>>>
+[2021-11-08 23:10:37,762: INFO: stage4]: >>>>> stage four started 
+[2021-11-08 23:10:37,764: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-08 23:10:37,765: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-08 23:10:37,765: INFO: all_utils]: Directory is created at artifacts/model
+[2021-11-08 23:10:38,221: WARNING: hdf5_format]: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-11-08 23:10:38,221: INFO: models]: Untrained model is read from artifacts/base_model/updated_VGG16_base_model.h5
+[2021-11-08 23:10:38,222: ERROR: stage4]: 'DATA_DIR'
+Traceback (most recent call last):
+  File "src/stage4.py", line 72, in <module>
+    train_model(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage4.py", line 48, in train_model
+    data_dir = artifacts["DATA_DIR"],
+KeyError: 'DATA_DIR'
+[2021-11-08 23:27:20,707: INFO: stage4]: >>>>> stage four started 
+[2021-11-08 23:27:20,709: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-08 23:27:20,710: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-08 23:27:20,710: INFO: all_utils]: Directory is created at artifacts/model
+[2021-11-08 23:27:21,121: WARNING: hdf5_format]: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-11-08 23:27:21,122: INFO: models]: Untrained model is read from artifacts/base_model/updated_VGG16_base_model.h5
+[2021-11-08 23:27:21,236: INFO: datamanagement]: data augmentation is used for training
+[2021-11-08 23:27:21,346: INFO: datamanagement]: train and valid generator is created
+[2021-11-08 23:27:21,347: INFO: stage4]: stage four completed and model is saved >>>>>
+[2021-11-09 00:49:53,335: INFO: stage4]: >>>>> stage four started 
+[2021-11-09 00:49:53,337: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-09 00:49:53,338: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-09 00:49:53,338: INFO: all_utils]: Directory is created at artifacts/model
+[2021-11-09 00:50:00,573: WARNING: hdf5_format]: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-11-09 00:50:00,573: INFO: models]: Untrained model is read from artifacts/base_model/updated_VGG16_base_model.h5
+[2021-11-09 00:50:00,714: INFO: datamanagement]: data augmentation is used for training
+[2021-11-09 00:50:00,827: INFO: datamanagement]: train and valid generator is created
+[2021-11-09 00:50:00,828: INFO: stage4]: stage four completed and model is saved >>>>>
+[2021-11-09 00:50:10,247: INFO: stage4]: >>>>> stage four started 
+[2021-11-09 00:50:10,251: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-09 00:50:10,252: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-09 00:50:10,252: INFO: all_utils]: Directory is created at artifacts/model
+[2021-11-09 00:50:12,072: WARNING: hdf5_format]: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-11-09 00:50:12,072: INFO: models]: Untrained model is read from artifacts/base_model/updated_VGG16_base_model.h5
+[2021-11-09 00:50:12,324: INFO: datamanagement]: data augmentation is used for training
+[2021-11-09 00:50:12,439: INFO: datamanagement]: train and valid generator is created
+[2021-11-09 00:50:12,439: ERROR: stage4]: You must compile your model before training/testing. Use `model.compile(optimizer, loss)`.
+Traceback (most recent call last):
+  File "src/stage4.py", line 84, in <module>
+    train_model(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage4.py", line 63, in train_model
+    callbacks = callbacks
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras/engine/training.py", line 1106, in fit
+    self._assert_compile_was_called()
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras/engine/training.py", line 2790, in _assert_compile_was_called
+    raise RuntimeError('You must compile your model before '
+RuntimeError: You must compile your model before training/testing. Use `model.compile(optimizer, loss)`.
+[2021-11-09 00:54:23,821: INFO: stage2]: >>>>> stage two started  
+[2021-11-09 00:54:23,824: INFO: all_utils]: yaml file: config/config.yaml loaded successfully 
+[2021-11-09 00:54:23,825: INFO: all_utils]: yaml file: params.yaml loaded successfully 
+[2021-11-09 00:54:23,825: INFO: all_utils]: Directory is created at base_model 
+[2021-11-09 00:54:56,558: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
+[2021-11-09 00:55:02,708: INFO: models]: VGG16 base model is saved at artifacts/base_model/VGG16_base_model.h5 
+[2021-11-09 00:55:02,775: INFO: models]: custom model is compiled and ready to be trained 
+[2021-11-09 00:55:02,779: INFO: stage2]: None 
+[2021-11-09 00:55:02,781: INFO: stage2]: full model summary: Model: "vgg16"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+=================================================================
+Total params: 14,714,688
+Trainable params: 0
+Non-trainable params: 14,714,688
+_________________________________________________________________
+ 
+[2021-11-09 00:55:02,781: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
+[2021-11-09 00:55:22,172: INFO: stage2]: stage two completed and base model is created >>>>> 
+[2021-11-09 00:56:48,471: INFO: stage4]: >>>>> stage four started 
+[2021-11-09 00:56:48,472: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-09 00:56:48,473: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-09 00:56:48,474: INFO: all_utils]: Directory is created at artifacts/model
+[2021-11-09 00:56:48,885: WARNING: hdf5_format]: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2021-11-09 00:56:48,885: INFO: models]: Untrained model is read from artifacts/base_model/updated_VGG16_base_model.h5
+[2021-11-09 00:56:48,994: INFO: datamanagement]: data augmentation is used for training
+[2021-11-09 00:56:49,104: INFO: datamanagement]: train and valid generator is created
+[2021-11-09 00:56:49,104: ERROR: stage4]: You must compile your model before training/testing. Use `model.compile(optimizer, loss)`.
+Traceback (most recent call last):
+  File "src/stage4.py", line 84, in <module>
+    train_model(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage4.py", line 63, in train_model
+    callbacks = callbacks
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras/engine/training.py", line 1106, in fit
+    self._assert_compile_was_called()
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras/engine/training.py", line 2790, in _assert_compile_was_called
+    raise RuntimeError('You must compile your model before '
+RuntimeError: You must compile your model before training/testing. Use `model.compile(optimizer, loss)`.
+[2021-11-09 01:04:12,228: INFO: stage2]: >>>>> stage two started  
+[2021-11-09 01:04:12,230: INFO: all_utils]: yaml file: config/config.yaml loaded successfully 
+[2021-11-09 01:04:12,231: INFO: all_utils]: yaml file: params.yaml loaded successfully 
+[2021-11-09 01:04:12,231: INFO: all_utils]: Directory is created at base_model 
+[2021-11-09 01:04:44,933: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
+[2021-11-09 01:04:53,148: INFO: models]: VGG16 base model is saved at artifacts/base_model/VGG16_base_model.h5 
+[2021-11-09 01:04:53,181: INFO: models]: custom model is compiled and ready to be trained 
+[2021-11-09 01:04:53,184: INFO: stage2]: None 
+[2021-11-09 01:04:53,206: INFO: stage2]: full model summary: Model: "vgg16"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+=================================================================
+Total params: 14,714,688
+Trainable params: 0
+Non-trainable params: 14,714,688
+_________________________________________________________________
+ 
+[2021-11-09 01:04:53,207: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
+[2021-11-09 01:05:01,307: INFO: stage2]: stage two completed and base model is created >>>>> 
+[2021-11-09 01:05:28,032: INFO: stage2]: >>>>> stage two started  
+[2021-11-09 01:05:28,034: INFO: all_utils]: yaml file: config/config.yaml loaded successfully 
+[2021-11-09 01:05:28,035: INFO: all_utils]: yaml file: params.yaml loaded successfully 
+[2021-11-09 01:05:28,035: INFO: all_utils]: Directory is created at base_model 
+[2021-11-09 01:05:28,532: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model. 
+[2021-11-09 01:05:28,923: INFO: models]: VGG16 base model is saved at artifacts/base_model/VGG16_base_model.h5 
+[2021-11-09 01:05:28,964: INFO: models]: custom model is compiled and ready to be trained 
+[2021-11-09 01:05:28,967: INFO: stage2]: None 
+[2021-11-09 01:05:28,969: INFO: stage2]: full model summary: Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+ 
+[2021-11-09 01:05:29,142: INFO: stage2]: stage two completed and base model is created >>>>> 
+[2021-11-09 01:05:46,054: INFO: stage4]: >>>>> stage four started 
+[2021-11-09 01:05:46,056: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-09 01:05:46,057: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-09 01:05:46,058: INFO: all_utils]: Directory is created at artifacts/model
+[2021-11-09 01:05:46,456: INFO: models]: Untrained model is read from artifacts/base_model/updated_VGG16_base_model.h5
+[2021-11-09 01:05:46,568: INFO: datamanagement]: data augmentation is used for training
+[2021-11-09 01:05:46,680: INFO: datamanagement]: train and valid generator is created
+[2021-11-09 01:05:46,980: ERROR: stage4]: Image transformations require SciPy. Install SciPy.
+Traceback (most recent call last):
+  File "src/stage4.py", line 84, in <module>
+    train_model(config_path= parsed_args.config,params_path =parsed_args.params)
+  File "src/stage4.py", line 63, in train_model
+    callbacks = callbacks
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras/engine/training.py", line 1148, in fit
+    steps_per_execution=self._steps_per_execution)
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras/engine/data_adapter.py", line 1383, in get_data_handler
+    return DataHandler(*args, **kwargs)
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras/engine/data_adapter.py", line 1150, in __init__
+    model=model)
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras/engine/data_adapter.py", line 924, in __init__
+    **kwargs)
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras/engine/data_adapter.py", line 794, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras/engine/data_adapter.py", line 928, in _peek_and_restore
+    return x[0], x
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras_preprocessing/image/iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras_preprocessing/image/iterator.py", line 238, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.apply_transform(x, params)
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras_preprocessing/image/image_data_generator.py", line 874, in apply_transform
+    order=self.interpolation_order)
+  File "/home/asdf/newops/env/lib/python3.6/site-packages/keras_preprocessing/image/affine_transformations.py", line 281, in apply_affine_transform
+    raise ImportError('Image transformations require SciPy. '
+ImportError: Image transformations require SciPy. Install SciPy.
+[2021-11-09 01:06:30,640: INFO: stage4]: >>>>> stage four started 
+[2021-11-09 01:06:30,642: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-09 01:06:30,643: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-09 01:06:30,643: INFO: all_utils]: Directory is created at artifacts/model
+[2021-11-09 01:06:45,654: INFO: models]: Untrained model is read from artifacts/base_model/updated_VGG16_base_model.h5
+[2021-11-09 01:06:46,072: INFO: datamanagement]: data augmentation is used for training
+[2021-11-09 01:06:46,246: INFO: datamanagement]: train and valid generator is created
+[2021-11-09 01:12:12,733: INFO: stage4]: stage four completed and model is saved >>>>>
+[2021-11-09 01:27:39,268: INFO: stage4]: >>>>> stage four started 
+[2021-11-09 01:27:39,270: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2021-11-09 01:27:39,271: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2021-11-09 01:27:39,271: INFO: all_utils]: Directory is created at artifacts/model
+[2021-11-09 01:27:39,638: INFO: models]: Untrained model is read from artifacts/base_model/updated_VGG16_base_model.h5
+[2021-11-09 01:27:39,768: INFO: datamanagement]: data augmentation is used for training
+[2021-11-09 01:27:39,880: INFO: datamanagement]: train and valid generator is created
+[2021-11-09 01:29:36,985: INFO: stage4]: training completed
+[2021-11-09 01:29:36,986: INFO: all_utils]: Directory is created at artifacts/model
+[2021-11-09 01:29:37,050: INFO: stage4]: trained model is saved at :artifacts/model/model_at_Tue_Nov__9_01_29_36_2021_.h5
+[2021-11-09 01:29:37,050: INFO: stage4]: stage four completed and model is saved >>>>>
